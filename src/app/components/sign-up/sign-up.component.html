@@ -1,0 +1,122 @@
+<!-- <div class="container-main">
+    <form #f1="ngForm" class="form">
+        <div class="login-container">
+            <div class="loginBox">
+                <div class="container container-radio">
+                    <div class="radio-buttons row">
+                        <div class="col-md">
+                            <input type="radio" class="btn-check btn1" name="roleId" id="option1" value="1"
+                                autocomplete="off" #option1="ngModel" [(ngModel)]="client.roleId">
+                            <label class="btn btn-outline-primary" for="option1">User</label>
+                        </div>
+                        <div class="col-md">
+                            <input type="radio" class="btn-check" name="roleId" id="option2" va autocomplete="off"
+                                value="2" #option2="ngModel" [(ngModel)]="client.roleId">
+                            <label class="btn btn-outline-primary" for="option2">Mentor</label>
+                        </div>
+                    </div>
+                </div>
+                <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px" />
+
+                <div class="inputBox form-group">
+
+                    <p class="labels" error-message></p>
+                    <div><label class="form-label" for=userName>Username:</label><input #userName="ngModel"
+                            name="userName" required minlength="3" maxlength="20" type="text"
+                            class="userName form-control" [(ngModel)]="client.userName" /></div>
+                    <div><label class="form-label">Email:</label><input #email="ngModel" name="email" type="text"
+                            required email class="email form-control" [(ngModel)]="client.email" /></div>
+
+                    <div><label class="form-label">Password:</label><input #password="ngModel" name="password"
+                            type="text" required
+                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                            class="password form-control" [(ngModel)]="client.password" /></div>
+                    <div class="error" *ngIf="userName.invalid && userName.dirty">
+                        <div *ngIf="userName.errors?.['required']">UserName Invalid</div>
+                        <div *ngIf="userName.errors?.['minlength']">UserName Invalid</div>
+                        <div *ngIf="userName.errors?.['maxlength']">UserName Invalid</div>
+                    </div>
+                    <div class="error" *ngIf="email.invalid && email.dirty">
+                        <div *ngIf="email.errors?.['required']"> Invalid email</div>
+                        <div *ngIf="email.errors?.['email']">Invalid email</div>
+
+                    </div>
+                    <div class="error" *ngIf="password.invalid && password.dirty">
+                        <div *ngIf="password.errors?.['required']">Use password</div>
+                        <div *ngIf="password.errors?.['pattern']">Take strong Password</div>
+
+                    </div>
+
+                    <div><input class="login-text" type="submit" [disabled]="f1.invalid" (click)="addUser()"
+                            value="Sign-Up" /></div>
+
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</div> -->
+
+<div class="container-main">
+    <form #f1="ngForm" class="form">
+        <div class="login-container">
+            <div class="loginBox">
+                <div class="container container-radio">
+                    <div class="radio-buttons row">
+                        <div class="col-md">
+                            <input type="radio" class="btn-check btn1" name="roleId" id="option1" value="1"
+                                autocomplete="off" #option1="ngModel" [(ngModel)]="client.roleId">
+                            <label class="btn btn-outline-primary" for="option1">User</label>
+                        </div>
+                        <div class="col-md">
+                            <input type="radio" class="btn-check" name="roleId" id="option2" va autocomplete="off"
+                                value="2" #option2="ngModel" [(ngModel)]="client.roleId">
+                            <label class="btn btn-outline-primary" for="option2">Mentor</label>
+                        </div>
+                    </div>
+                </div>
+                <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px" />
+
+                <!-- <h3>Sign in here</h3> -->
+                <div class="inputBox form-group">
+
+                    <p class="labels" error-message></p>
+                    <div><label class="form-label" for=userName>Username:</label><input #userName="ngModel"
+                            name="userName" required minlength="3" maxlength="20" type="text"
+                            class="userName form-control" [(ngModel)]="client.userName" /></div>
+                    <div><label class="form-label">Email:</label><input #email="ngModel" name="email" type="text"
+                            required email class="email form-control" [(ngModel)]="client.email" /></div>
+
+                    <div><label class="form-label">Password:</label><input #password="ngModel" name="password"
+                            type="text" required
+                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                            class="password form-control" [(ngModel)]="client.password" /></div>
+                    <div class="error" *ngIf="userName.invalid && userName.dirty">
+                        <div *ngIf="userName.errors?.['required']">UserName Invalid</div>
+                        <div *ngIf="userName.errors?.['minlength']">UserName Invalid</div>
+                        <div *ngIf="userName.errors?.['maxlength']">UserName Invalid</div>
+                    </div>
+                    <div class="error" *ngIf="email.invalid && email.dirty">
+                        <div *ngIf="email.errors?.['required']"> Invalid email</div>
+                        <div *ngIf="email.errors?.['email']">Invalid email</div>
+
+                    </div>
+                    <div class="error" *ngIf="password.invalid && password.dirty">
+                        <div *ngIf="password.errors?.['required']">Use password</div>
+                        <div *ngIf="password.errors?.['pattern']">Take strong Password</div>
+
+                    </div>
+
+                    <div><input class="login-text" type="submit" [disabled]="f1.invalid" (click)="addUser()"
+                            value="Sign-Up" /></div>
+
+                    <!-- <button type="submit"  class="btn btn-outline-success"(click)="addUser()" value="Sign Up" >Sign Up</button> -->
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</div>

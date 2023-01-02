@@ -1,0 +1,16 @@
+#form{
+    margin-top: 15px;
+}
+input{
+    margin: 0.4rem;
+}
+label{
+    margin: 0.4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.btn{
+    margin-top: 0.5rem;
+}

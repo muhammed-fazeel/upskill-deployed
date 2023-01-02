@@ -1,0 +1,55 @@
+<ng-container *ngIf="product.length == 0">
+    <div class="cart-div">
+        <h1 class="my-cart">My cart</h1>
+    </div>
+    <div class="container2">
+        <div class="center">
+            <img src="assets/images/emptyCart.png" alt="">
+            <h4>Your cart is empty!</h4>
+            <div class="button">
+                <button class="btn btn-primary" routerLink="/" style="width: 150px; margin: 20px;">Shop now</button>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="product.length != 0">
+    <div class="cart-div">
+        <h1 class="my-cart">My cart</h1>
+    </div>
+    <div class="container">
+        <div class="card mb-3" style="min-width: 700px;" *ngFor="let item of product ; let i = index">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="assets/images/{{item.thumbnailUrl}}" class="img-fluid rounded-start course-img"
+                        alt="no-image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body bdy">
+                        <h5 class="card-title title"><b>{{item.title}}</b></h5>
+                        <p class="card-text"><small class="text-muted">By {{item.author}}</small></p>
+                        <span class="card-text rating">{{item.rating}} star</span>
+                        <div *ngFor="let i of rating_arr" class="rating-div">
+                            <img src="assets/images/star2.png" alt="" class="rating-star">
+                        </div>
+                        <p class="card-text"><small class="text-muted">{{item.duration}} total hours *
+                                {{item.noOfLectures}} lectures</small></p>
+                        <p class="card-text price">₹{{item.price}}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <div class="btn-container1">
+                            <button class="btn btn-danger btns delete" (click)="removeItem(item.courseId)">Delete</button>
+                            <button class="btn btn-success btns enroll enroll1" (click)="enroll(item.courseId)">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-container">
+        <div class="card">
+            <p class="card-text total"> Total: ₹</p>
+            <div><button class="btn btn-danger btns empty-cart" style="width: 150px;" (click)="emptyCart()">Empty Cart</button></div>
+            <div><button class="btn btn-primary btns shop-more" style="width: 150px;" routerLink="/">Shop More</button></div>
+        </div>
+    </div>
+</ng-container>

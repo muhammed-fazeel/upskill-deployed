@@ -1,0 +1,21 @@
+.container1{
+    height: 100vh;
+    background-image: url('./gradient1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+.heading{
+    margin: auto;
+    width: 50%;
+    padding: 7rem 0;
+    text-align: center;
+}
+h2{
+    font-style: italic;
+}
+img{
+    width: 300px;
+    padding: 2rem;
+}

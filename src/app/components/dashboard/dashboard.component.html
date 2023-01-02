@@ -1,0 +1,95 @@
+<div class="row row1">
+    <div class="col-md-3">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Category Id</th>
+                <th scope="col">Category Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Development</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Business</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Finance & Accounting</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>IT & Software</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Office Productivity</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Personal Development</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>Design</td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Marketing</td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Lifestyle</td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td>Music</td>
+              </tr>
+              <tr>
+                <th scope="row">11</th>
+                <td>Teaching & Academics</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="col-md-9"> <app-add-course></app-add-course></div>
+   
+</div>
+<div class="container row2">
+    <h2> Uploaded Courses</h2>
+    <div class="row">
+    
+       
+            <div class="col-md-3" *ngFor="let c of user_courses">
+                <div class="card" style="height: 18rem;">
+                    <img class="card-img-top" src="./assets/images/Development.png" alt="Card image cap">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><b>{{c.title}}</b></h5>
+                        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p> -->
+                        <a href="course-page/{{c.courseId}}" class="mt-auto btn btn-primary btn-sm">Go to Course</a>
+                        <button (click)="delete(c.courseId)" class="mt-auto btn btn-outline-danger btn-sm">Delete Course</button>
+            
+
+                    </div>
+                </div>
+    
+    
+            </div>
+    
+        <div class="col-md-3">
+            <div class="card" style="height: 260px;">
+                <div class="card-body" style="text-align: center;margin-top:50px ;">
+                    <a href="dashboard"> <i id="" class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></a>
+                    <h5 class="card-title">Add Course</h5>
+    
+                </div>
+            </div>
+        </div>
+    
+    
+    </div>
+    </div>

@@ -1,0 +1,42 @@
+.banner{
+    background-image: url('./mentorbanner.jpg');
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 22rem;
+    display: flex;
+    flex-direction: column;
+}
+.text{
+    background-color: white;
+    width: 40%;
+    padding: 1.5rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+
+
+.row{
+    margin-top: 1rem;
+}
+.card{
+    /* height: 50%; */
+    /* width: 80%; */
+    /* padding-left: 3rem; */
+    border: none;
+    text-align: center;
+
+}
+.col{
+    padding: 2.5rem;
+}
+img{
+    width: 8rem;
+    height: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* float: left; */
+}

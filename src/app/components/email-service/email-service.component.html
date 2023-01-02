@@ -1,0 +1,37 @@
+<!-- Modal --> 
+<button type="button" id="fixedbutton" class="btn contact-us" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <!-- <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i> -->
+
+  <img src="assets/images/speech-bubble.png" alt="">
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Contact Us</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form class="form-group" (submit)="sendEmail($event)">
+            <div>
+              <label>Name</label>
+              <input type="text" class="form-control" name="user_name">
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" class="form-control" name="user_email">
+            </div>
+            <div>
+              <label>Message</label>
+              <textarea name="message" class="form-control"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <div>
+                <input type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal" value="Send">
+              </div>
+            </div>
+          </form>
+        </div>

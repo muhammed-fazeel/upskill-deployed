@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="container">
+            <div [ngClass]="textclass">
+                <h2 style=" margin-left: 260px; margin-top: 80px;">Start your learning journey</h2>
+            </div>
+            <div [ngClass]="textclass">
+    
+                <img src="assets/images/video.png" style="width:50%;height: 350px;width: 350px; margin-left: 260px; margin-top: 120px;"
+                    alt="">
+            </div>
+            <div class="video">
+                <iframe style="box-shadow: 1px 1px 6px black;" width="720" height="415" [attr.src]="present_video"
+                    id="video">
+                </iframe>
+                <h2>{{coursetitle}}</h2>
+                <hr>
+                <div class="description">
+                    <p>{{course.description}}</p>
+                </div>
+                <hr>
+                <h5>Reviews</h5>
+                <div class="form">
+                    <form #f1="ngForm" (ngSubmit)="addReview()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Add a review</label><br>
+                            <!-- ------------------rating---------------- -->
+                            <span class="star-rating" style="margin-bottom:0.5rem;margin-top:0.5rem">
+                                <input type="radio" name="rating" value="1" #option1="ngModel"
+                                    [(ngModel)]="review.rating"><i></i>
+                                <input type="radio" name="rating" value="2" #option2="ngModel"
+                                    [(ngModel)]="review.rating"><i></i>
+                                <input type="radio" name="rating" value="3" #option3="ngModel"
+                                    [(ngModel)]="review.rating"><i></i>
+                                <input type="radio" name="rating" value="4" #option4="ngModel"
+                                    [(ngModel)]="review.rating"><i></i>
+                                <input type="radio" name="rating" value="5" #option5="ngModel"
+                                    [(ngModel)]="review.rating"><i></i>
+                            </span>
+                            <!-- ------------------rating end---------------------- -->
+    
+    
+                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="type here"
+                                name="description" #description="ngModel" [(ngModel)]="review.description">
+                            <small id="emailHelp" class="form-text text-muted">Your reviews are public.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post</button>
+                    </form>
+                </div>
+                <!-- --------------------review form end--------------------- -->
+    
+                <div class="reviews" *ngFor="let r of reviews; " >
+                        {{make_stars(r)}}
+                    <span style="margin: 0;font-weight:bold">{{r.author}}</span><span
+                        style="margin-left: 1rem;font-size:small">{{r.date}}</span>
+                    <br />
+                    <div *ngFor="let i of rating_arr" class="rating-div">
+                        <img src="assets/images/star2.png" alt="" class="rating-star">
+                    </div>
+                    <p>{{r.description}}</p>
+                    <hr>
+                    {{empty_stars()}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class style=" border-radius: 2%; box-shadow: 1px 1px 6px black; position: fixed; width: 25%;">
+            <li id="title" style="list-style: none; ">{{course.title}} <br /> <span id="author">By
+                    {{course.author}}</span></li>
+
+            <ol class="list-group scrollbar scrollbar-lady-lips">
+
+                <div *ngFor="let v of videolinks">
+                    <a (click)="showVideo(v)" style="cursor: pointer;">
+
+
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-md-10">{{v.title}}</div>
+                                <div class="col-md-2">       <div *ngIf="roleId">
+                                    <button id="deleteButton" (click)="deleteVideo(v.videoLinksId)" style="z-index: 9; "    >
+                                       <i class="fa fa-close">
+                                       </i>
+                                   </button>
+                               </div></div>
+                            </div>
+                        </li>
+                    </a> 
+                </div>
+            </ol>
+            <div *ngIf="roleId"><a href="add-video"><button class="btn btn-outline-primary" style="position: fixed;margin-top   : 1rem;"> <i
+                class="fa fa-plus-circle" aria-hidden="true"></i> Add Video</button></a> </div>
+        </div>
+        </div>
+ <br><br><br><br><br><br><br><br><br><br><br>
+
+        <!-- <div *ngIf="roleId"><a href="add-video"><button class="btn btn-outline-primary" style="position: fixed;"> <i
+            class="fa fa-plus-circle" aria-hidden="true"></i> Add Video</button></a> </div>
+    </div> -->
+    
+</div>
